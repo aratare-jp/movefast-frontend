@@ -1,0 +1,138 @@
+/* 
+ * A class to turn a tag into a grid container. This class by itself is not sufficient and needs to be used with
+ * the `.grid-container` class as defined below.
+ */
+.grid-container-base {
+  display: grid;
+  margin: 5px;
+}
+
+/*
+ * Styling for the grid items. Texts are bold white, and are centered in its respective cell.
+ */
+.grid-item {
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  margin: 4px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+/*
+ * Desktop mode.
+ */
+@media only screen and (min-width: 600px) {
+  .App {
+    display: grid;
+    justify-items: center;
+  }
+
+  .grid-container {
+    grid-template-columns: [col1] 11em [col2] 5em [col3] 7em [col4] 3em [col5] 10em [col6];
+    grid-template-rows: [row1] 8em [row2] 8em [row3] 4em [row4] 2em [row5] 4em [row6];
+  }
+
+  .item-1 {
+    grid-column: col1 / col3;
+    grid-row: row1 / row3;
+  }
+
+  .item-2 {
+    grid-column: col3 / col6;
+    grid-row: row1 / row2;
+  }
+
+  .item-3 {
+    grid-column: col3 / col5;
+    grid-row: row2 / row3;
+  }
+
+  .item-4 {
+    grid-column: col5 / col6;
+    grid-row: row2 / row3;
+  }
+
+  .item-5 {
+    grid-column: col1 / col2;
+    grid-row: row3 / row4;
+  }
+
+  .item-6 {
+    grid-column: col1 / col2;
+    grid-row: row4 / row6;
+  }
+
+  .item-7 {
+    grid-column: col2 / col4;
+    grid-row: row3 / row6;
+  }
+
+  .item-8 {
+    grid-column: col4 / col6;
+    grid-row: row3 / row5;
+  }
+
+  .item-9 {
+    grid-column: col4 / col6;
+    grid-row: row5 / row6;
+  }
+}
+
+/*
+ * Mobile mode.
+ */
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: [col1] 50% [col2] 50% [col3];
+    grid-template-rows: [row1] 5em [row2] 5em [row3] 5em [row4] 5em [row5] 5em [row6] 5em [row7];
+  }
+
+  .item-1 {
+    grid-column: col1 / col3;
+    grid-row: row1 / row2;
+  }
+
+  .item-2 {
+    grid-column: col1 / col3;
+    grid-row: row3 / row4;
+  }
+
+  .item-3 {
+    grid-column: col1 / col2;
+    grid-row: row2 / row3;
+  }
+
+  .item-4 {
+    grid-column: col2 / col3;
+    grid-row: row2 / row3;
+  }
+
+  .item-5 {
+    grid-column: col1 / col2;
+    grid-row: row5 / row6;
+  }
+
+  .item-6 {
+    grid-column: col1 / col2;
+    grid-row: row6 / row7;
+  }
+
+  .item-7 {
+    grid-column: col1 / col3;
+    grid-row: row4 / row5;
+  }
+
+  .item-8 {
+    grid-column: col2 / col3;
+    grid-row: row5 / row6;
+  }
+
+  .item-9 {
+    grid-column: col2 / col3;
+    grid-row: row6 / row7;
+  }
+}
